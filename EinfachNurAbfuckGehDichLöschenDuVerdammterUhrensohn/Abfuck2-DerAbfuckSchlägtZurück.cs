@@ -37,8 +37,8 @@ namespace EinfachNurAbfuckGehDichLöschenDuVerdammterUhrensohn
         {
             Random random = new Random();
             tick++; (int d, int h, int min, int s) = TickToTime(tick);
-            lbProgress.Text = "Nächstes Level zu " + progressBar.Value + "% geladen!";
-            lbProgress.Text += $"\n\nVorrausichtliche Wartezeit = {(random.Next(s) + 2).ToString()} Minuten!";
+            lbProgress.Text = "Nächstes Level zu " + tick /5 + "% geladen!";
+            lbProgress.Text += $"\n\nVorrausichtliche Wartezeit = {min + random.Next(1,4)} Minuten!";
             
             int value = 0;
             switch (progressbarModus)

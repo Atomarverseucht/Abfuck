@@ -24,9 +24,9 @@ namespace EinfachNurAbfuckGehDichLöschenDuVerdammterUhrensohn
 
         private void Abfuck_Load(object sender, EventArgs e)
         {
-            hoverArea.FlatStyle = FlatStyle.Flat;
-            hoverArea.FlatAppearance.BorderSize = 0;
-            hoverArea.UseVisualStyleBackColor = false;
+            //hoverArea.FlatStyle = FlatStyle.Flat;
+            //hoverArea.FlatAppearance.BorderSize = 0;
+            //hoverArea.UseVisualStyleBackColor = false;
             randomButton();
 
         }
@@ -52,9 +52,9 @@ namespace EinfachNurAbfuckGehDichLöschenDuVerdammterUhrensohn
             trollButton.Width = randSX;
             trollButton.Height = randSY;
             trollButton.Location = new Point(randPX, randPY);
-            hoverArea.Location = new Point(randPX - boundary, randPY - boundary);
-            hoverArea.Width = randSX + 2 * boundary;
-            hoverArea.Height = randSY + 2*boundary;
+            //hoverArea.Location = new Point(randPX - boundary, randPY - boundary);
+            //hoverArea.Width = randSX + 2 * boundary;
+            //hoverArea.Height = randSY + 2*boundary;
             trollButton.Show();
             Amogus.anzahlButtonTeleports++;
         }
@@ -68,17 +68,14 @@ namespace EinfachNurAbfuckGehDichLöschenDuVerdammterUhrensohn
             Amogus.neustartBlock = false;
         }
 
-        private void trollButton_MouseHover(object sender, EventArgs e)
+        private void trollButton_MouseMove(object sender, MouseEventArgs e)
         {
-            trollButton.Hide();
-            randomButton();
-        }
-
-        private void hoverArea_MouseHover(object sender, EventArgs e)
-        {
-            randomButton();
-            hoverArea.Hide();
-            hoverArea.Show();
+            if (new Random().Next(25) != 0)
+            {
+                trollButton.Hide();
+                randomButton();
+            }
+            
         }
     }
 }
